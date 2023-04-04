@@ -5,6 +5,9 @@ import SearchBar from "./components/SearchBar.jsx";
 import Nav from "./components/Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Routes, Route} from "react-router-dom"
+import About from "./components/About.jsx"
+import Detail from "./components/Detail";
 
 function App() {
   let [characters, setCharacters] = useState([]);
@@ -27,14 +30,19 @@ function App() {
 
   const onClose = (id) => {
     setCharacters(
-      characters.filter((character) => parseInt(id) != character.id)
+      characters.filter((character) => parseInt(id) !== character.id)
     );
   };
 
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <Cards onClose={onClose} characters={characters} />
+      <Routes>
+        <Route path="/home" element={<Cards onClose={onClose} characters={characters} />}></Route>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/detail/:id" element={<Detail/>}></Route>
+        
+      </Routes>
     </div>
   );
 }
