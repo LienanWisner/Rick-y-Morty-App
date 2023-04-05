@@ -24,9 +24,10 @@ const Detail = ()=>{
      return(
         <div>
             <h1>{character.name}</h1>
-            <p>{character.status}</p>
-            <p>{character.species}</p>
-            <p>{character.gender}</p>
+            <h2>{character.status}</h2>
+            <h3>{character.species}</h3>
+            <h4>{character.gender}</h4>
+            <p>{character.origin.name}</p>
             <img src={character.image}/>
         </div>
     )} else return(<div>No existe personaje con ese ID</div>)

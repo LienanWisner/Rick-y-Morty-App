@@ -5,14 +5,32 @@ import SearchBar from "./components/SearchBar.jsx";
 import Nav from "./components/Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Routes, Route} from "react-router-dom"
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom"
 import About from "./components/About.jsx"
 import Detail from "./components/Detail";
+import Form from "./components/Form/Form";
+
 
 function App() {
-  let [characters, setCharacters] = useState([]);
+const navigate = useNavigate();
+const [access, setAccess] = useState(false);
+const EMAIL = 'lien.argentina@gmail.com', PASSWORD = '123123123';
 
-  function onSearch(id) {
+useEffect(() => {
+  !access && navigate('/');
+}, [access]);
+
+  
+let [characters, setCharacters] = useState([]);
+
+  function login(userData) {
+    if (userData.password === PASSWORD && userData.email === EMAIL) {
+       setAccess(true);
+       navigate('/home');
+    }
+ }
+
+function onSearch(id) {
     for (const character of characters) {
       if (character.id === parseInt(id))
         return window.alert("El personaje ya esta agregado!");
@@ -34,10 +52,15 @@ function App() {
     );
   };
 
+  const {pathname} = useLocation()
+
+
+
   return (
     <div className="App">
-      <Nav onSearch={onSearch} />
+      {pathname !=="/" && <Nav onSearch={onSearch} />}
       <Routes>
+        <Route path="/" element={<Form login={login}/>}></Route>
         <Route path="/home" element={<Cards onClose={onClose} characters={characters} />}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/detail/:id" element={<Detail/>}></Route>
