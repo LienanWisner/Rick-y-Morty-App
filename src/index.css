@@ -5,7 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to left bottom, #001c45, #004176, #006783, #008a62, #0fa802);
+  /* Created with https://www.css-gradient.com */
+background: #C7BB3D;
+background: -webkit-linear-gradient(bottom, #C7BB3D, #3DB494);
+background: -moz-linear-gradient(bottom, #C7BB3D, #3DB494);
+background: linear-gradient(to top, #C7BB3D, #3DB494);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

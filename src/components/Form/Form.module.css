@@ -1,0 +1,17 @@
+.formGeneral{
+    justify-content: center;
+    background-color: wheat;
+    align-items: center;
+}
+
+.login{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+
+}
+
+.email{
+
+}

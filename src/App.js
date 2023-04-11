@@ -1,15 +1,16 @@
 import "./App.css";
-import Cards from "./components/Cards.jsx";
-import SearchBar from "./components/SearchBar.jsx";
+import Cards from "./components/Cards/Cards.jsx";
+import SearchBar from "./components/SearchBar/SearchBar.jsx";
 //import characters from './data.js';
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom"
 import About from "./components/About.jsx"
 import Detail from "./components/Detail";
 import Form from "./components/Form/Form";
-
+import styles from "./App.css"
+import Favorites from "./components/Favorites/Favorites";
 
 function App() {
 const navigate = useNavigate();
@@ -30,12 +31,15 @@ let [characters, setCharacters] = useState([]);
     }
  }
 
+const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+const API_KEY = "17178412455e.75be543753360638a34b"
+
 function onSearch(id) {
     for (const character of characters) {
-      if (character.id === parseInt(id))
+      if (character.id === id)
         return window.alert("El personaje ya esta agregado!");
     }
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    axios(`${URL_BASE}/${id}?key=${API_KEY}`)
       .then(({ data }) => {
         if (data.name) {
           setCharacters([...characters, data]);
@@ -48,7 +52,7 @@ function onSearch(id) {
 
   const onClose = (id) => {
     setCharacters(
-      characters.filter((character) => parseInt(id) !== character.id)
+      characters.filter((character) => id !== character.id)
     );
   };
 
@@ -64,7 +68,7 @@ function onSearch(id) {
         <Route path="/home" element={<Cards onClose={onClose} characters={characters} />}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/detail/:id" element={<Detail/>}></Route>
-        
+        <Route path="/favorites" element={<Favorites onClose={onClose}/>}></Route>
       </Routes>
     </div>
   );

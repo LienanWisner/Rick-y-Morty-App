@@ -1,0 +1,29 @@
+.card{
+    scale: 90%;
+    background-image: linear-gradient(to top, #aee6e3, #9dc7b6, #90a78d, #84886b, #756951);
+    border: 3px;
+    border-style: solid;
+    border-color: linear-gradient(to left, #aee6e3, #9dc7b6, #90a78d, #84886b, #756951);
+    border-radius: 2em;
+    justify-content: space-between;
+    box-shadow: 7px 5px 25px;
+}
+
+.card:hover{
+    background-image: radial-gradient(circle, #aee6e3, #9dc7b6, #90a78d, #84886b, #756951);
+}
+
+.nombre{
+   
+    background-color:#1ad8cf;
+    align-self: center;
+    border: 10px 10px 10px solid;
+    border-color:black;
+    color: #e3f246;
+    align-items: center;
+    
+}
+
+.botonBorrar{
+
+}

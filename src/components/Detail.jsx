@@ -2,6 +2,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+const API_KEY = "17178412455e.75be543753360638a34b"
 
 const Detail = ()=>{
      let {id} = useParams()
@@ -10,7 +12,7 @@ const Detail = ()=>{
      
 
      useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+        axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(({ data }) => {
            if (data.name) {
               setCharacter(data); 
            } else {
@@ -30,7 +32,7 @@ const Detail = ()=>{
             <p>{character.origin.name}</p>
             <img src={character.image}/>
         </div>
-    )} else return(<div>No existe personaje con ese ID</div>)
+    )} else return(<div>Cargando...</div>)
 }
 
 export default Detail;

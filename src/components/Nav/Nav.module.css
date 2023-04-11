@@ -1,0 +1,117 @@
+.navBar{
+    background-image: radial-gradient(circle, #49afef, #0ca0f9, #0090ff, #1c7cff, #5263ff);    
+    align-items: center;
+    padding: 2em;
+    box-shadow: 0 0 20px #f0e14a;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.about button {
+    display: flex;
+    position: relative;
+    right: 65em;
+    width: 100px;
+    height: 45px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #212529;
+    background: #212529;
+  }
+  .about button:hover {
+    background: #fff;
+    color: #212529
+  }
+  .about button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+
+  .home button {
+    display: flex;
+    position: relative;
+    right: 63em;
+    width: 100px;
+    height: 45px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #212529;
+    background: #212529;
+  }
+  .home button:hover {
+    background: #fff;
+    color: #212529
+  }
+  .home button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+
+.logOut button {
+    display: flex;
+    position: relative;
+    left: 45em;
+    width: 100px;
+    height: 45px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #212529;
+    background: #860103f7;
+  }
+  .logOut button:hover {
+    background: #fff;
+    color: #212529
+  }
+  .logOut button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
+
+  .favorites button {
+    display: flex;
+    position: relative;
+    left: 45em;
+    width: 100px;
+    height: 45px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #212529;
+    background: #860103f7;
+  }
+  .favorites button:hover {
+    background: #fff;
+    color: #212529
+  }
+  .favorites button:active {
+    box-shadow: 0 0 #212529;
+    top: 5px;
+  }
