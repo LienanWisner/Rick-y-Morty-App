@@ -50,6 +50,7 @@ function Card(props) {
     </div>
   );
 }
+
 const mapStateToProps = (state)=>{
    return{
       myFavorites: state.myFavorites
