@@ -1,7 +1,6 @@
 .card{
     scale: 90%;
-    background-image: linear-gradient(to top, #aee6e3, #9dc7b6, #90a78d, #84886b, #756951);
-    border: 3px;
+    background-image: radial-gradient(circle, #208d45, #3f9947, #58a549, #70b04c, #87bc4f, #8cbf50, #90c150, #95c451, #87be4f, #79b94d, #6bb34b, #5cad4a);    border: 3px;
     border-style: solid;
     border-color: linear-gradient(to left, #aee6e3, #9dc7b6, #90a78d, #84886b, #756951);
     border-radius: 2em;
@@ -10,20 +9,20 @@
 }
 
 .card:hover{
-    background-image: radial-gradient(circle, #aee6e3, #9dc7b6, #90a78d, #84886b, #756951);
-}
+    background-image: radial-gradient(circle, #5cad4a, #6bb34b, #79b94d, #87be4f, #95c451, #90c150, #8cbf50, #87bc4f, #70b04c, #58a549, #3f9947, #208d45);}
 
-.nombre{
-   
+.nombre button{
+    text-decoration: none;
     background-color:#1ad8cf;
     align-self: center;
-    border: 10px 10px 10px solid;
-    border-color:black;
-    color: #e3f246;
+    border: 0px 0px 10px solid black;
+    color: #BBE0F2;
     align-items: center;
     
 }
 
-.botonBorrar{
-
+.botonBorrar button{
+    text-decoration: none;
+    background-color: black;
+    color: #1ad8cf;
 }

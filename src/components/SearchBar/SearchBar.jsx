@@ -9,9 +9,10 @@ export default function SearchBar({onSearch}) {
    }
 
    return (
-      <div>
+      <div className={styles.SearchBar}>
          <input className={styles.input} type='search' value = {id} onChange={handleChange}/>
-         <button className={styles.botonAgregar} onClick={()=>onSearch(id)}>Agregar</button>
+
+         <button  onClick={()=>onSearch(id)} className={styles.botonAgregar}>Agregar</button>
       </div>
    );
 }

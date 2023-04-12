@@ -6,10 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Created with https://www.css-gradient.com */
-background: #C7BB3D;
-background: -webkit-linear-gradient(bottom, #C7BB3D, #3DB494);
-background: -moz-linear-gradient(bottom, #C7BB3D, #3DB494);
-background: linear-gradient(to top, #C7BB3D, #3DB494);
+  background-image: linear-gradient(to top, #756951, #7e896f, #87a898, #99c5c6, #bbe0f2);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

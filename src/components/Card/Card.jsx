@@ -36,7 +36,7 @@ function Card(props) {
       )
       }
 
-      <button className={styles.botonBorrar} onClick={() => props.onClose(props.id)}>Borrar</button>
+      <button  onClick={() => props.onClose(props.id)} className={styles.botonBorrar}>Borrar</button>
 
       <NavLink className={styles.nombre} to={`/detail/${props.id}`}>
         <h2>{props.name}</h2>

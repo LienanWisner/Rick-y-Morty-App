@@ -2,10 +2,11 @@ import SearchBar from "../SearchBar/SearchBar";
 import { NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
 
+
 const Nav = ({ onSearch }) => {
   return (
     <div className={styles.navBar}>
-      <SearchBar onSearch={onSearch} />
+      <SearchBar onSearch={onSearch}/>
       <NavLink to="/about" className={styles.about}>
         <button>About</button>
       </NavLink>
@@ -14,7 +15,7 @@ const Nav = ({ onSearch }) => {
         <button>Home</button>
       </NavLink>
 
-      <NavLink to="/favorites">
+      <NavLink to="/favorites" className={styles.favorites}>
       <button>Favorites</button>
       </NavLink>
 
