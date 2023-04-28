@@ -15,7 +15,7 @@ import Favorites from "./components/Favorites/Favorites";
 function App() {
 const navigate = useNavigate();
 const [access, setAccess] = useState(false);
-const EMAIL = 'lien.argentina@gmail.com', PASSWORD = '123123123';
+// const EMAIL = 'lien.argentina@gmail.com', PASSWORD = '123123';
 
 useEffect(() => {
   !access && navigate('/');
@@ -24,31 +24,44 @@ useEffect(() => {
   
 let [characters, setCharacters] = useState([]);
 
-  function login(userData) {
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-       setAccess(true);
-       navigate('/home');
+//   function login(userData) {
+//     if (userData.password === PASSWORD && userData.email === EMAIL) {
+//        setAccess(true);
+//        navigate('/home');
+//     }
+//  }
+async function login(userData) {
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/login/';
+   try{
+      const { data } = await axios(URL + `?email=${email}&password=${password}`)
+      const { access } = data;
+      setAccess(data);
+      access && navigate('/home');
+      !access && window.alert("No estas registrado mostro, 2 lucas y entras.")
     }
- }
+    catch(error){
+      console.log("Error en axios login")
+    }
+}
 
-const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
-const API_KEY = "17178412455e.75be543753360638a34b"
+//const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+const URL_BASE = "http://localhost:3001/rickandmorty/character"
+//const API_KEY = "17178412455e.75be543753360638a34b"
 
-function onSearch(id) {
+async function onSearch(id) {
     for (const character of characters) {
-      if (character.id === id)
+      if (character.id === +id)
         return window.alert("El personaje ya esta agregado!");
-    }
-    axios(`${URL_BASE}/${id}?key=${API_KEY}`)
-      .then(({ data }) => {
+    } try{
+      const {data} = await axios(`${URL_BASE}/${id}`) 
         if (data.name) {
           setCharacters([...characters, data]);
-        } else {
-          window.alert("¡No hay personajes con este ID");
         }
-      })
-      .catch(() => window.alert("¡No hay personajes con este ID"));
-  }
+      }
+      catch(error){
+        window.alert("¡No hay personajes con este ID")};
+      }
 
   const onClose = (id) => {
     setCharacters(
